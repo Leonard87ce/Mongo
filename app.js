@@ -2,25 +2,16 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3000
 const path = require ('path')
-var morgan = require('morgan')
-const sessionsRouter = express.Router()
+const morgan = require('morgan')
+const sessionsRouter = require('./src/routers/sessionsRouter')
 
 
-app.use(morgan('combined'))
+
+app.use(morgan('tiny'))
 app.use(express.static(path.join(__dirname, '/public/')))
 
 app.set('views', './src/views')
 app.set('view engine', 'ejs')
-
-sessionsRouter.route('/')
-  .get((req, res) =>{
-    res.send('Hello sessions')
-  })
-
-sessionsRouter.route('/1')
-  .get ((req, res) =>{
-    res.send('hello single sessions')
-  })
 
 app.use('/sessions', sessionsRouter)
 
