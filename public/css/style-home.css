@@ -491,10 +491,8 @@ button.navbar-toggler  i{font-size:30px;}
 	display:block;
 }
 footer {
-    height: 0;
+    height: auto;
 }
-
-  }
 
 
 .logo
@@ -575,8 +573,8 @@ nav.navbar
 @media (max-width:991px)
 {
     footer{max-height: 100%;
-                height: 1.5rem;}
-    .video-sec{position:absolute;}
+                height:100%;}
+    .video-sec{position:relative;}
 
 }
 @media(max-width:325px)
